@@ -25,3 +25,7 @@ except(Exception e):
 finally:
     print("Goodbye")
 """
+# a list?
+a_list = [1,2,3]
+print (a_list)
+a_list.append("something else")
