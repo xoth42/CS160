@@ -13,13 +13,25 @@ class Employee:
         self.phone = ""
         self.department = ""
         self.hourlySalary = 15.0
+        self.letsMakeSureWeUnderstandTheDifference = True
         
     def setName(self, name):
         self.name = name
     
     def getName(self):
         return(self.name)
+    
+    def aMethodWithALocalVariable(self):
+        letsMakeSureWeUnderstandTheDifference = False
+        print("the local variable has a value of", letsMakeSureWeUnderstandTheDifference)
+        print("the attribute has a value of", self.letsMakeSureWeUnderstandTheDifference)
 
+    def someOtherMethod(self):
+        self.aNewAttribute = 999
+        
+    def accessingTheNewAttribute(self):
+        print(self.aNewAttribute)
+    
 if __name__ == "__main__":
     # Call methods for objects, that are instantiations for a class. Don't call methods for the class!! 
     employee1 = Employee()
@@ -29,3 +41,7 @@ if __name__ == "__main__":
     employee2 = Employee()
     employee2.setName("Maria")
     print(employee1.getName())
+    
+    employee1.aMethodWithALocalVariable()
+    employee1.someOtherMethod()
+    employee1.accessingTheNewAttribute()
