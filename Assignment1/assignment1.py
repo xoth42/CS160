@@ -1,3 +1,6 @@
+
+
+
 def is_prime(number):
     # number is int and > 1    
     for i in range(2, number//2 + 1):
@@ -40,20 +43,18 @@ def primes(number):
         if is_prime(i):
             primes_under_number.append(i)
     return primes_under_number
-    
+
+def decompose(number, results):
+        for i in range(2, number +1):
+            if number % i == 0:
+                # divisible by i, we found a factor, now look for the next one
+                results.append(i)
+                return decompose(number//i, results)
 
 def prime_decomposition(number):
-    """TODO: fix this case: 
-In [3]: assignment1.prime_decomposition(12)
-Out[3]: [2, 3, 4, 6]
-should be [2,2,3]"""
-    # number > 1, int
-    # get the factors of the number
-    factors = []
-    for possible_factor in range(2, number):
-            is_factor = number % possible_factor == 0
-            if is_factor:
-                # found a factor, now add it to factors list
-                factors.append(possible_factor)
-    return factors
-    
+    results = []
+    decompose(number, results)
+    return results
+
+if __name__ =="__main__":
+    print(prime_decomposition(100))
