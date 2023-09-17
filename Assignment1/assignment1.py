@@ -39,7 +39,7 @@ def are_relatively_prime(num1, num2):
 
 def primes(number):
     primes_under_number = []
-    for i in range(1, number + 1):
+    for i in range(2, number + 1):
         if is_prime(i):
             primes_under_number.append(i)
     return primes_under_number
