@@ -6,9 +6,11 @@ class TiredStudent:
         self.isTired = isTired
         self.hoursOfSleep = hoursOfSleep
         self.age = age
+    def isAdult(self):
+        return self.age > 18
     def sleepReport(self):
         slept = "Nice job! you got enough sleep!"
-        if self.age < 0 or self.age <= 18:
+        if not self.isAdult():
             # age is not defined by user, assume user is child, or check if child
             if self.hoursOfSleep < 9:
                 return "Not enough sleep. Get at least 9 hours of sleep per night."
