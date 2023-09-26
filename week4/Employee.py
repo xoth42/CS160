@@ -8,6 +8,8 @@ class Employee(Person.Person):
             self.salary=newSalary    
     def getSalary(self):
         return self.salary
+    def __repr__(self):
+        return(super().__repr__() + " " + str(self.getSalary()))
             
 if __name__=="__main__":
     # hello? is it me you're looking for?
@@ -16,3 +18,4 @@ if __name__=="__main__":
     # Beets
     e1.setSalary(15.5)
     print(e1.getSalary())
+    print(e1)

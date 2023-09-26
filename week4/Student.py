@@ -7,4 +7,4 @@ class Student(Person.Person):
         return self.major
     def setMajor(self,newMajor):
         self.major=newMajor
-        
+    
