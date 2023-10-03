@@ -1,0 +1,30 @@
+Question 1 (doing late, alone 10/2)
+Synchonizer: n/a
+Liason: n/a
+Reflector: n/a
+
+
+Question 2.2 
+    1. Yes it does.
+    2. import (file) will run the code, allowing the class to be used, which means that since Car.py has code outside of its class (car1 = Car(), car1.set_make_model("Dodge Dart"), print(car1get_make_model()), this code will ran aswell and print to messages to console with import Car. This can be seen from compiling ElectricCar, even though that file only has a class (as of the beginning of the assignment)
+    3. import statements are more than just referencing other code, it's like  copying the code of one file into the location of the import statement. it will be run as the same as the rest of the code.
+print(car1))
+2.2.1 
+(type yes or no)
+2.2.2
+(type your answer here)
+2.2.3 
+(Type your answers here )
+
+Question 2.3
+2.3.1
+(yes or no)
+2.3.2
+(yes or no)
+2.3.3
+(type your answer here)
+2.3.4
+(type your answer here)
+
+Question 3.1 
+(type your answer here)
