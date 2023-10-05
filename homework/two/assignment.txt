@@ -1,0 +1,32 @@
+Learning Goals:
+This assignment is designed to give you an opportunity to practice with the design of a couple of classes that work together in order to solve a particular problem, and how to state the specifications of such a solution via Abstract Data Types (ADTs). This is an assignment centered on design, not implementation.
+
+ 
+
+This assignment will be 100% manually graded, so, different from other assignments this semester, you will not get an autograded score when you submit your work.
+
+Overview
+For this project, you will be designing two classes that, together, will implement a system to keep track of vehicles. You will indicate your design of these two classes via ADTs. Your ADTs, as we have seen in class, will specify the methods of the class, but not the attributes. The two classes will be very similar to the ones we have ben talking about in lectures this semester. Pay attention, using object oriented design principles, to correctly indicate to which class the methods that you will be designing belong to.
+
+ 
+
+One of the classes that you will design will store information about cars. This class needs to be able to store the make and model of the car, the year it was manufactured, the color, of the car, the number of doors it has, and the maximum number of passengers it can transport at any one time.
+
+ 
+
+The second class will store a collection of cars. This class needs to be able to have cars added to it, report how many cars total it has, report what is the maximum number of passengers that can be transported at once by the complete collection of cars, and indicate how many cars of a particular make and model there are in the collection.
+
+ 
+
+You do not have to implement the classes you design. If you submit code but no ADTs, your assignment will not be graded and you will not receive credit for it. You can, of course, implement the classes as a way of practicing, but we will not be looking at any code while grading, and we, unfortunately, will not be able to give you feedback on your code. You can use one of several different ADT styles we have seen in class, but you need to make sure that the required information is included, and included correctly.
+
+ 
+
+Your tasks
+Based on the operations described above, submit ADTs for a class called Car and a class called FleetOfCars. Your lists of methods should indicate both what inputs they will take and what outputs they will return, if any.
+
+Upload two files to gradescope:
+
+Car.pdf, which includes the ADT for class Car.
+
+FleetOfCars.pdf, which includes the ADT for class FleetOfCars.
