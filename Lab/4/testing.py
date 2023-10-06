@@ -46,7 +46,7 @@ class PrimeDecomposition(unittest.TestCase):
                  (1,[]),
                  (2,[2]),
                  (7,[7]),
-                 (47,[2,2,2,2,3]))
+                 (47,[2,2,2,2,3])) #wrong on purpose
 
         for test in tests:
             self.runner(prime_decomposition(test[0]),test[1])
