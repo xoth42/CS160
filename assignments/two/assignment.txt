@@ -1,8 +1,10 @@
+10/15/2023
+submitted to gradescope
+
 Learning Goals:
 This assignment is designed to give you an opportunity to practice with the design of a couple of classes that work together in order to solve a particular problem, and how to state the specifications of such a solution via Abstract Data Types (ADTs). This is an assignment centered on design, not implementation.
 
  
-
 This assignment will be 100% manually graded, so, different from other assignments this semester, you will not get an autograded score when you submit your work.
 
 Overview
