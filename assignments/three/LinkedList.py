@@ -1,5 +1,6 @@
 # feeling normal again
 from Node import Node
+
 # now we will make it so that linked lists contain nodes which contain data
 class LinkedList:
     def __init__(self):
@@ -60,44 +61,69 @@ class LinkedList:
         
     def delete(self, i):
         #print(self.size, i)
-        if self.size == 1:
+        if i >= self.size-1:
+            #raise IndexError("Index out of range")
+            return
+        elif self.size == 1:
             self.head = None
             self.tail = None
         elif i == 0:
             # get rid of front of list
             self.head = self.head.getNext()
             self.head.setPrevious(None)
-        elif i == self.size: # size goes from 1 up, index goes from 0 up
+        elif i == self.size-1: # index goes from 0 up
             # get rid of end of list
             self.tail = self.tail.getPrevious()
             self.tail.setNext(None)
         else:
              # get rid of somehting in the middle 
-            
+            remove_me = self.getNode(i)
+            before = remove_me.getPrevious()
+            after = remove_me.getNext()
+            before.setNext(after)
+            after.setPrevious(before)
+            # done ^ 
+            '''
             location_of_removal = self.head
-            for j in range(i-1):   
+            #print(self.head)
+            for j in range(1,i):   
                 #print("j:",j)
                 location_of_removal=location_of_removal.getNext()
             #now we must set the ones before and after this one to be eachother's next/previous
             one_after_remove = location_of_removal.getNext()
             # location_of_removal.setNext(oneAfterRemove)
             one_before_remove = location_of_removal.getPrevious()
+            # now set them equal
             one_after_remove.setPrevious(one_before_remove)
             one_before_remove.setNext(one_after_remove)
             #oneBeforeRemove.getNext().setPrevious(oneBeforeRemove) 
+            '''
         self.size = self.size - 1 # need this
-
-    def __getitem__(self, i):
-        # not sure if this should return the node object, or its data
-        if i == 0:
+    def getNode(self,i):
+        # index
+        if i >= self.size-1:
+            #raise IndexError("Index out of range")
+            return None
+        elif i == 0:
             return self.head
-        elif i == self.size - 1:
+        elif i == self.size-1:
             return self.tail
         else:
             current = self.head
             for _ in range(i):
                 current = current.getNext()
             return current
+    def __getitem__(self, i):
+        # not sure if this should return the node object, or its data
+        if i == 0:
+            return self.head.getData()
+        elif i == self.size - 1:
+            return self.tail.getData()
+        else:
+            current = self.head
+            for _ in range(i):
+                current = current.getNext()
+            return current.getData()
 
     def __str__(self):
         stringToReturn = "List size: " + str(self.size)

@@ -12,12 +12,15 @@ class testCases(unittest.TestCase):
         Cars.add(what)
         Cars.delete(2)
         
-        self.assertEqual(str(Cars),"List size: 2\nTesla X 2023, 2 doors, 4 max passengers, Battery Size: 10\nthe Car 100, 1 doors, 2 max passengers, Gas Tank Size: 3")
+        self.assertEqual(str(Cars),"List size: 2\nTesla X 2023, 2 doors, 4 max passengers, Battery Size: 10\nToyota Corolla 2000, 4 doors, 6 max passengers, Gas Tank Size: 8")
+        Cars.add(tesla)
+        Cars.add(toyota)
         Cars.delete(2)
-        self.assertEqual(str(Cars),"List size: 1\nTesla X 2023, 2 doors, 4 max passengers, Battery Size: 10")
-        Cars.add(what)
+
+        self.assertEqual(str(Cars),"List size: 3\nTesla X 2023, 2 doors, 4 max passengers, Battery Size: 10\nToyota Corolla 2000, 4 doors, 6 max passengers, Gas Tank Size: 8\nToyota Corolla 2000, 4 doors, 6 max passengers, Gas Tank Size: 8")
+        
         Cars.delete(0)
-        self.assertEqual(str(Cars),"List size: 1\nthe Car 100, 1 doors, 2 max passengers, Gas Tank Size: 3")
+        self.assertEqual(str(Cars),"List size: 2\nToyota Corolla 2000, 4 doors, 6 max passengers, Gas Tank Size: 8\nToyota Corolla 2000, 4 doors, 6 max passengers, Gas Tank Size: 8")
     def testLinkedListInsert(self):
         c1 = ElectricCar.ElectricCar("c1",1,1,1)
         c1str = str(c1)
@@ -43,6 +46,17 @@ def main():
     tesla = ElectricCar.ElectricCar("Tesla X 2023",2,4,10)
     toyota = GasolineCar.GasolineCar("Toyota Corolla 2000", 4,6,8)
     what = GasolineCar.GasolineCar("the Car 100", 1,2,3)
+    Cars = LinkedList.LinkedList()
+    Cars.add(tesla)
+    Cars.add(toyota)
+    Cars.add(what)
+    print(Cars)
+    Cars.delete(2)
+    print(Cars)
+    '''
+    tesla = ElectricCar.ElectricCar("Tesla X 2023",2,4,10)
+    toyota = GasolineCar.GasolineCar("Toyota Corolla 2000", 4,6,8)
+    what = GasolineCar.GasolineCar("the Car 100", 1,2,3)
     print(tesla,toyota,what) #Tesla X 2023, 2 doors, 4 max passengers, Battery Size: 10 Toyota Corolla 2000, 4 doors, 6 max passengers, Gas Tank Size: 8 the Car 100, 1 doors, 2 max passengers, Gas Tank Size: 3
 
     Cars = LinkedList.LinkedList()
@@ -59,7 +73,7 @@ def main():
     Cars2.add(toyota)
     Cars2.add(what)
     Cars2.delete(2)
-    print(Cars2)
+    print(Cars2)'''
     # print(Cars)
     # the_tests = [1,5,7,32,4,6]
     # l = LinkedList.LinkedList()
@@ -70,5 +84,5 @@ def main():
     # print(l)
     # print(l.__getitem__(4))
 if __name__ == "__main__":
-    unittest.main()
-    #main()
+    #unittest.main()
+    main()

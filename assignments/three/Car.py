@@ -35,4 +35,17 @@ class Car:
   
     def __str__(self)->str:
         return f"{self.makeAndModel}, {self.numberOfDoors} doors, {self.getMaximumNumberOfPasengers()} max passengers"
+    
+    """Car.getMakeAndModel()() works correctly (0/1)
+Car.getMaximumNumberOfPasengers() works correctly (0/1)
+Car constructor takes correct arguments (0/5)
+Car.setMakeAndModel() and Car.getMakeAndModel() work correctly (0/1)
+what the hell is going on here
 
+"""
+
+
+if __name__=="__main__":
+    c1 = Car()
+    print(c1)
+    print("make:", c1.getMakeAndModel())
