@@ -3,7 +3,10 @@ class Car:
         self.makeAndModel = makeAndModel
         self.numberOfDoors = numberOfDoors
         self.maximumNumberOfPasengers = int(maximumNumberOfPassengers)
+        # self must not have next or previous, because node will handle this.
+        '''
         # for linked list
+
         self.next = None
         self.previous = None
         
@@ -15,9 +18,9 @@ class Car:
     def setNext(self,next):
         self.next = next
     def setPrevious(self,prev):
-        self.previous = prev
+        self.previous = prev'''
     
-    def setMakeAndModel(self,make):
+    def setMakeAndModel(self,make:str):
         self.makeAndModel=make
     def getMakeAndModel(self)->str:
         return self.makeAndModel
@@ -31,5 +34,5 @@ class Car:
         return self.maximumNumberOfPasengers
   
     def __str__(self)->str:
-        return f"{self.makeAndModel}, {self.numberOfDoors} doors, {self.getMaximumNumberOfPasengers} max passengers"
+        return f"{self.makeAndModel}, {self.numberOfDoors} doors, {self.getMaximumNumberOfPasengers()} max passengers"
 
