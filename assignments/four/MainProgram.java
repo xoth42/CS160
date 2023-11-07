@@ -40,7 +40,7 @@ class MainProgram{
                 if (promptYesNo()){
                     System.out.print("Enter new maximum number of passengers: ");
                     int newMax = Integer.parseInt(input.nextLine());
-                    searchResults.get(i).setMaximumNumberOfPassangers(newMax);
+                    searchResults.get(i).setMaximumNumberOfPassengers(newMax);
                 }
                 System.out.print("Do you want to change the number of doors?: ");
                 if (promptYesNo()){
@@ -89,17 +89,17 @@ class MainProgram{
             System.out.print("Enter gas tank size: ");
             double gasTankSize = Double.parseDouble(input.nextLine());
             GasolineCar car = new GasolineCar(makeAndModel,maximumNumberOfPassangers,numberOfDoors,gasTankSize);
-            fleet.addCar(car);
+            fleet.add(car);
         }
         else if (type.equals("electric")){
             System.out.print("Enter battery size: ");
             double batterySize = Double.parseDouble(input.nextLine());
             ElectricCar car = new ElectricCar(makeAndModel,maximumNumberOfPassangers,numberOfDoors,batterySize);
-            fleet.addCar(car);
+            fleet.add(car);
         }
         else {
             Car car = new Car(makeAndModel,maximumNumberOfPassangers,numberOfDoors);
-            fleet.addCar(car);
+            fleet.add(car);
         }
     }
     private static void deleteRecord(){
@@ -113,6 +113,7 @@ class MainProgram{
             index = Integer.parseInt(input.nextLine());
         }
         catch (NumberFormatException e){
+            //System.out.println(fleet);
             System.out.println("Invalid enter a number from 0 to " + (fleet.getSize()) + ".");
             return;
         }
@@ -125,6 +126,7 @@ class MainProgram{
             }
         }
         catch (IndexOutOfBoundsException e){
+            //System.out.println(fleet);
             System.out.println("Invalid index. There are " + fleet.getSize() + " cars in the directory.");
         }
     }
@@ -153,8 +155,6 @@ class MainProgram{
             else{
                 System.out.println("Invalid input");
             }
-            
-            
 
         }
         shutDown();

@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 public class FleetOfCars{
     private ArrayList<Car> cars;
-    int size;
+    private int size;
     public FleetOfCars(){
         cars = new ArrayList<Car>();
         size = 0;
     }
-    public void addCar(Car c){
+    public void add(Car c){
         cars.add(c);
         size++;
     }
@@ -25,7 +25,7 @@ public class FleetOfCars{
         FleetOfCars results = new FleetOfCars();
         for(int i = 0; i < cars.size(); i++){
             if(cars.get(i).getMakeAndModel().toLowerCase().contains(make)){
-                results.addCar(cars.get(i));
+                results.add(cars.get(i));
             }
         }
         return results;
@@ -42,3 +42,15 @@ public class FleetOfCars{
     }
 
 }
+
+
+
+/*
+FleetOfCars: (25 points total)
+FleetOfCars() 1 point
+search(String s)→FleetOfCars 15 points
+add(Car/GasolineCar/ElectricCar x) 2 points
+getSize() → int 2 points
+delete(int i) 5 points
+get(i) → Ca
+ */

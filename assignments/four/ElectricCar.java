@@ -15,3 +15,11 @@ public class ElectricCar extends Car{
         return super.toString() + "\nBattery Size: " + batterySize;
     }
 }
+/*
+ElectricCar: (11 points total)
+    ElectricCar(String makeAndModel, int maximumNumberOfPassengers, int numberOfDoors, 
+       double batterySize)  5 points
+         toString()→ string 3 points
+setBatterySize(double b) 2 point
+            getBatterySize()→ double 1 poin
+ */

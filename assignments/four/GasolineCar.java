@@ -15,3 +15,11 @@ public class GasolineCar extends Car{
         return super.toString() + "\nGas Tank Size: " + gasTankSize;
     }
 }
+/*
+GasolineCar: (11 points total)
+GasolineCar(String makeAndModel, int maximumNumberOfPassengers, int numberOfDoors,
+          double gasTankSize 5 points
+         toString()→ string 3 points
+setGasTankSize(double g) 2 points
+getGasTankSize()→ double 1 point
+ */
