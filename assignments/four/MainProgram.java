@@ -21,6 +21,10 @@ class MainProgram{
         return (in.equals("y") || in.equals("yes"));
     }
     private static void modifyCars(){
+        if (fleet.getSize() == 0){
+            System.out.println("The directory is empty");
+            return;
+        }
         FleetOfCars searchResults = promptSearch();
         for (int i = 0;i < searchResults.getSize();i++){
             System.out.print(searchResults.get(i) + "\nDo you want to modify this record?: ");
@@ -50,14 +54,24 @@ class MainProgram{
         }
     }
     private static FleetOfCars promptSearch(){
+
         System.out.print("Enter make and model to search: ");
         String query = input.nextLine();
         FleetOfCars searchResults = fleet.search(query);
+        if (searchResults.getSize() == 0){
+            System.out.println("No records found.");
+        }
         return searchResults;
     }
     private static void searchForCars(){
+        if (fleet.getSize() == 0){
+            System.out.println("The directory is empty");
+            return;
+        }
         FleetOfCars searchResults = promptSearch();
-        System.out.println(searchResults);
+        if (searchResults.getSize() != 0){  
+            System.out.println(searchResults);
+        }
     }
     private static void enterNewCar(){        
         System.out.print("Enter make and model: ");
@@ -71,36 +85,48 @@ class MainProgram{
         System.out.print("Enter type of car (gas, electric, or normal): ");
         String type = input.nextLine().toLowerCase();
 
-        String carStr;
-
         if (type.equals("gas")){
             System.out.print("Enter gas tank size: ");
             double gasTankSize = Double.parseDouble(input.nextLine());
             GasolineCar car = new GasolineCar(makeAndModel,maximumNumberOfPassangers,numberOfDoors,gasTankSize);
             fleet.addCar(car);
-            carStr = car.toString();
         }
         else if (type.equals("electric")){
             System.out.print("Enter battery size: ");
             double batterySize = Double.parseDouble(input.nextLine());
             ElectricCar car = new ElectricCar(makeAndModel,maximumNumberOfPassangers,numberOfDoors,batterySize);
             fleet.addCar(car);
-            carStr = car.toString();
         }
         else {
             Car car = new Car(makeAndModel,maximumNumberOfPassangers,numberOfDoors);
             fleet.addCar(car);
-            carStr = car.toString();
         }
-        System.out.println("Created new car" + carStr);
     }
     private static void deleteRecord(){
+        if (fleet.getSize() == 0){
+            System.out.println("The directory is empty");
+            return;
+        }
         System.out.print("Enter the index of the record you want to delete: ");
-        int index = Integer.parseInt(input.nextLine());
+        int index;
+        try{
+            index = Integer.parseInt(input.nextLine());
+        }
+        catch (NumberFormatException e){
+            System.out.println("Invalid enter a number from 0 to " + (fleet.getSize()) + ".");
+            return;
+        }
 
         // todo handle this error: java.lang.IndexOutOfBoundsException
-        System.out.print(fleet.get(index) + "\nAre you sure you want to this?: ");
-        if (promptYesNo()){fleet.delete(index);}
+        try {
+            System.out.print(fleet.get(index) + "\nAre you sure you want to this?: ");
+            if (promptYesNo()){
+                fleet.delete(index);
+            }
+        }
+        catch (IndexOutOfBoundsException e){
+            System.out.println("Invalid index. There are " + fleet.getSize() + " cars in the directory.");
+        }
     }
     public static void main(String[] args){
         String entered = "";
