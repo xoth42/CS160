@@ -1,6 +1,6 @@
-import Car
+from Car import Car
 
-class GasolineCar (Car.Car):
+class GasolineCar (Car):
     def __init__(self, makeAndModel="none assigned", numberOfDoors=4, maximumNumberOfPassengers=5, gasTankSize=-1):
         super().__init__(makeAndModel,numberOfDoors,maximumNumberOfPassengers)
         self.gasTankSize = gasTankSize
@@ -16,4 +16,5 @@ class GasolineCar (Car.Car):
 if __name__=="__main__":
     c1 = GasolineCar("Toyota Corolla 2000", 4,6,8)
     print(c1)
+    
         

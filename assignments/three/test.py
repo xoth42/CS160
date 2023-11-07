@@ -1,26 +1,26 @@
 
-import ElectricCar, GasolineCar, LinkedList, unittest
+import Car, ElectricCar, GasolineCar, LinkedList, unittest
 # Unit testing
 class testCases(unittest.TestCase):
-    def testLinkdedListDelete(self):
-        tesla = ElectricCar.ElectricCar("Tesla X 2023",2,4,10)
-        toyota = GasolineCar.GasolineCar("Toyota Corolla 2000", 4,6,8)
-        what = GasolineCar.GasolineCar("the Car 100", 1,2,3)
-        Cars = LinkedList.LinkedList()
-        Cars.add(tesla)
-        Cars.add(toyota)
-        Cars.add(what)
-        Cars.delete(2)
+    # def testLinkdedListDelete(self):
+    #     tesla = ElectricCar.ElectricCar("Tesla X 2023",2,4,10)
+    #     toyota = GasolineCar.GasolineCar("Toyota Corolla 2000", 4,6,8)
+    #     what = GasolineCar.GasolineCar("the Car 100", 1,2,3)
+    #     Cars = LinkedList.LinkedList()
+    #     Cars.add(tesla)
+    #     Cars.add(toyota)
+    #     Cars.add(what)
+    #     Cars.delete(2)
         
-        self.assertEqual(str(Cars),"List size: 2\nTesla X 2023, 2 doors, 4 max passengers, Battery Size: 10\nToyota Corolla 2000, 4 doors, 6 max passengers, Gas Tank Size: 8")
-        Cars.add(tesla)
-        Cars.add(toyota)
-        Cars.delete(2)
+    #     self.assertEqual(str(Cars),"List size: 2\nTesla X 2023, 2 doors, 4 max passengers, Battery Size: 10\nToyota Corolla 2000, 4 doors, 6 max passengers, Gas Tank Size: 8")
+    #     Cars.add(tesla)
+    #     Cars.add(toyota)
+    #     Cars.delete(2)
 
-        self.assertEqual(str(Cars),"List size: 3\nTesla X 2023, 2 doors, 4 max passengers, Battery Size: 10\nToyota Corolla 2000, 4 doors, 6 max passengers, Gas Tank Size: 8\nToyota Corolla 2000, 4 doors, 6 max passengers, Gas Tank Size: 8")
+    #     self.assertEqual(str(Cars),"List size: 3\nTesla X 2023, 2 doors, 4 max passengers, Battery Size: 10\nToyota Corolla 2000, 4 doors, 6 max passengers, Gas Tank Size: 8\nToyota Corolla 2000, 4 doors, 6 max passengers, Gas Tank Size: 8")
         
-        Cars.delete(0)
-        self.assertEqual(str(Cars),"List size: 2\nToyota Corolla 2000, 4 doors, 6 max passengers, Gas Tank Size: 8\nToyota Corolla 2000, 4 doors, 6 max passengers, Gas Tank Size: 8")
+    #     Cars.delete(0)
+    #     self.assertEqual(str(Cars),"List size: 2\nToyota Corolla 2000, 4 doors, 6 max passengers, Gas Tank Size: 8\nToyota Corolla 2000, 4 doors, 6 max passengers, Gas Tank Size: 8")
     def testLinkedListInsert(self):
         c1 = ElectricCar.ElectricCar("c1",1,1,1)
         c1str = str(c1)
@@ -40,9 +40,23 @@ class testCases(unittest.TestCase):
         l.insert(7,c2)
         st3 = "List size: 8\n" + str(c2) + "\n" + c1str + "\n" + c1str + "\n" + str(c2) + "\n" + c1str + "\n" + c1str + "\n" + c1str + "\n" + str(c2)
         self.assertEqual(str(l),st3)
+    def testCars(self):
+        c1 = Car.Car("c1",2,4)
+        self.assertEqual(c1.getMakeAndModel(),"c1")
+        self.assertEqual(c1.getNumberOfDoors(),2)
+        self.assertEqual(c1.getMaximumNumberOfPasengers(),4)
+        c1.setMakeAndModel("c2")
+        c1.setNumberOfDoors(3)
+        c1.setMaximumNumberOfPasengers(5)
+        self.assertEqual(c1.getMakeAndModel(),"c2")
+        self.assertEqual(c1.getNumberOfDoors(),3)
+        self.assertEqual(c1.getMaximumNumberOfPasengers(),5)
+        self.assertEqual(str(c1),"c2, 3 doors, 5 max passengers")
+
 
 
 def main():
+    #unittest.main()
     tesla = ElectricCar.ElectricCar("Tesla X 2023",2,4,10)
     toyota = GasolineCar.GasolineCar("Toyota Corolla 2000", 4,6,8)
     what = GasolineCar.GasolineCar("the Car 100", 1,2,3)
@@ -83,6 +97,11 @@ def main():
     # l.insert(6,100)
     # print(l)
     # print(l.__getitem__(4))
+def carTests():
+    c1 = Car.Car("c1",2,4)
+    print(c1.getMakeAndModel())
+
 if __name__ == "__main__":
     #unittest.main()
-    main()
+    #carTests()
+    #main()

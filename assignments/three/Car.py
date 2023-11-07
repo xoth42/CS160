@@ -32,7 +32,7 @@ class Car:
         self.maximumNumberOfPasengers=num 
     def getMaximumNumberOfPasengers(self)->int:
         return self.maximumNumberOfPasengers
-  
+    
     def __str__(self)->str:
         return f"{self.makeAndModel}, {self.numberOfDoors} doors, {self.getMaximumNumberOfPasengers()} max passengers"
     
