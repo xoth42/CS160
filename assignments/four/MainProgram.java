@@ -85,13 +85,13 @@ class MainProgram{
         System.out.print("Enter type of car (gas, electric, or normal): ");
         String type = input.nextLine().toLowerCase();
 
-        if (type.equals("gas")){
+        if (type.equals("gas")|type.equals("g")){
             System.out.print("Enter gas tank size: ");
             double gasTankSize = Double.parseDouble(input.nextLine());
             GasolineCar car = new GasolineCar(makeAndModel,maximumNumberOfPassangers,numberOfDoors,gasTankSize);
             fleet.add(car);
         }
-        else if (type.equals("electric")){
+        else if (type.equals("electric")|type.equals("e")){
             System.out.print("Enter battery size: ");
             double batterySize = Double.parseDouble(input.nextLine());
             ElectricCar car = new ElectricCar(makeAndModel,maximumNumberOfPassangers,numberOfDoors,batterySize);
