@@ -13,6 +13,9 @@ public class Car{
     public int getId(){
         return id;
     }
+    public int getID(){
+        return id;
+    }
     public int getPowerSource(){
         return powerSource;
     }
@@ -20,6 +23,9 @@ public class Car{
         return pricePerDay;
     }
     public void setId(int id){
+        this.id = id;
+    }
+    public void setID(int id){
         this.id = id;
     }
     public void setPowerSource(int powerSource){

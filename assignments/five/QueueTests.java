@@ -8,5 +8,11 @@ public class QueueTests{
         q.enqueue(2);
         // ArrayList<int> check = q.peek();
         assertEquals((Integer)1, q.dequeue());
+        assertEquals((Integer)2, q.dequeue());
+        assertEquals(null, q.dequeue());
+        q.enqueue(14);
+        assertEquals((Integer)14, q.peek());
+        q.dequeue();
+        assertEquals(null, q.peek());
     }
 }

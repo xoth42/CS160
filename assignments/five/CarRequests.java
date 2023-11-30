@@ -1,5 +1,8 @@
 public class CarRequests{
-    private Queue<Integer> requests = new Queue<Integer>();
+    private Queue<Integer> requests;
+    public CarRequests(){
+        requests = new Queue<Integer>();
+    }
     public void addRequest(int powerSource){
         requests.enqueue(powerSource);
     }

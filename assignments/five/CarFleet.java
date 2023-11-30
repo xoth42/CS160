@@ -1,15 +1,16 @@
+// not sure if i need this?
 import java.util.ArrayList;
-import java.util.List;
-public class CarLot{
-    
+public class CarFleet{
+
     private Queue<Car> gasolineCars;
     private Queue<Car> hybridCars;
     private Queue<Car> electricCars;
-    public CarLot(){
+    public CarFleet(){
         gasolineCars = new Queue<Car>();
         hybridCars   = new Queue<Car>();
         electricCars = new Queue<Car>();
     }
+    
     public boolean addCar(Car c){
         if (c.getPowerSource() == 1){
             gasolineCars.enqueue(c);
@@ -27,7 +28,7 @@ public class CarLot{
             return false;
         }
     }
-    public List<Car> processRequests(CarRequests r){
+    public ArrayList<Car> processRequest(CarRequests r){
         ArrayList<Car> newCars = new ArrayList<Car>();
         while (r.hasPendingRequests()){
             int powerSource = r.getRequest();
